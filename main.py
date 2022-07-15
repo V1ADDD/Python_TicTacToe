@@ -16,23 +16,23 @@ class MainApp(App):
         self.button = ["", "", "", "", "", "", "", "", ""]
         main_layout = BoxLayout(orientation="vertical", padding=3, spacing=3)  # window
         up_layout = BoxLayout(height=50)  # window in window
-        self.label1 = Label(text="O", size_hint=(None, None), height=50, font_size=20,
-                            pos_hint={"center_x": 0.1, "center_y": 0.15})  # obj for clicking (button)
+        self.label1 = Label(text="O", font_size=20,
+                            pos_hint={"center_x": 0.5, "center_y": 0.5})  # obj for clicking (button)
         up_layout.add_widget(self.label1)  # add Button on window in window
-        self.count_x = Label(text="0", size_hint=(None, None), height=50, width=50, font_size=20,
-                             pos_hint={"center_x": 0.1, "center_y": 0.15})  # obj for clicking (button)
+        self.count_x = Label(text="0", font_size=20,
+                             pos_hint={"center_x": 0.5, "center_y": 0.5})  # obj for clicking (button)
         up_layout.add_widget(self.count_x)  # add Button on window in window
-        self.count_o = Label(text="0", size_hint=(None, None), height=50, width=50, font_size=20,
-                             pos_hint={"center_x": 0.1, "center_y": 0.15})  # obj for clicking (button)
+        self.count_o = Label(text="0", font_size=20,
+                             pos_hint={"center_x": 0.5, "center_y": 0.5})  # obj for clicking (button)
         up_layout.add_widget(self.count_o)  # add Button on window in window
-        empty = Label(text=" ", font_size=20, pos_hint={"center_x": 0.1, "center_y": 0.15})  # obj for clicking (button)
+        empty = Label(text=" ", font_size=20, pos_hint={"center_x": 0.5, "center_y": 0.5})  # obj for clicking (button)
         up_layout.add_widget(empty)  # add Button on window in window
-        new_button = Button(text="New", font_size=20, size_hint=(None, None), height=50,
-                            pos_hint={"center_x": 0.1, "center_y": 0.15})
+        new_button = Button(text="New", font_size=20,
+                            pos_hint={"center_x": 0.5, "center_y": 0.5})
         new_button.bind(on_press=self.new_game)
         up_layout.add_widget(new_button)
-        exit_button = Button(text="Exit", font_size=20, size_hint=(None, None), height=50,
-                             pos_hint={"center_x": 0.1, "center_y": 0.15})
+        exit_button = Button(text="Exit", font_size=20,
+                             pos_hint={"center_x": 0.5, "center_y": 0.5})
         exit_button.bind(on_press=exit1)
         up_layout.add_widget(exit_button)
         main_layout.add_widget(up_layout)  # add window on window to window
@@ -53,7 +53,6 @@ class MainApp(App):
                 i += 1
             main_layout.add_widget(h_layout)  # add window on window to window
 
-        Window.size = (500, 650)  # size for window
         return main_layout
 
     def new_game(self, instance):
